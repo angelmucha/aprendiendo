@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </div>
+            <img class="clase5g" src="img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>SELECCIONA TU GRADO DE ESTUDIO: </li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+<button class="custom-btnG btn-G"><span><a id="button3" class="a">3ER GRADO DE PRIMARIA</a></span></button>
+<BR>
+<button class="custom-btnG btn-G"><span><a id="button4" class="a">4TO GRADO DE PRIMARIA</a></span></button>
+<BR>
+<button class="custom-btnG btn-G"><span><a id="button5" class="a">5TO GRADO DE PRIMARIA</a></span></button>
+<div class="claseg">
+<img src="img/Captura2.PNG">
+</div>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+    var button3 = document.getElementById('button3');
+        button3.addEventListener('click', function() {
+            window.location.href = 'Materias/Materia3r.html?id=' + userId + '&userName=' + userName;
+        });
+    var button4 = document.getElementById('button4');
+        button4.addEventListener('click', function() {
+            window.location.href = 'Materias/Materia4r.html?id=' + userId + '&userName=' + userName;
+        });
+
+    var button5 = document.getElementById('button5');
+        button5.addEventListener('click', function() {
+            window.location.href = 'Materias/Materia5r.html?id=' + userId + '&userName=' + userName;
+        });
+</script>
+</html>

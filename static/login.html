@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <body class="margen">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+            
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style login.css">
+
+    <h1 class="leterlg">INICIAR SESION</h1>
+
+    <div class="login">
+        <form id="loginForm">    
+            <input placeholder="Escriba su e-mail" type="email"  class="text" id="email" name="email" required>
+            <h2>CORREO</h2>
+            <br>
+            <br>
+            <input placeholder="Escriba su contraseña" type="password" class="text" id="password" name="password" required>
+            <h2>CONTRASEÑA</h2>
+            <br>
+            <h3><a href="registro.html">¿AUN NO TIENES UNA CUENTA?</a></h3>
+            <button type="submit" value="Ingresar" class="custom-btn1 btn-3">Iniciar sesión</button>
+    </form>
+    <div id="greeting" style="display: none;"></div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            fetch('http://44.210.92.36:8001/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then(function(data) {
+                // Handle successful login response
+                var userId = data.id;
+                var userName = data.name;
+                localStorage.setItem('userId', userId); // Almacenar el ID del usuario en el almacenamiento local
+                localStorage.setItem('userName', userName)
+                var greetingElement = document.getElementById('greeting');
+                greetingElement.innerHTML = 'Welcome, ' + data.name + '!';
+                greetingElement.style.display = 'block';
+                var userId = data.id;
+                window.location.href = 'inicio.html?id=' + userId + '&userName=' + userName;
+            })
+            .catch(function(error) {
+                // Handle error
+                alert("Login failed: " + error);
+            });
+        });
+    </script>
+</body>
+<img class="imglg" src="img/Captura6.PNG">
+</html>

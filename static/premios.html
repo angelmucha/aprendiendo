@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Premios Canjeables</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .puntos-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .puntos-container img {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin: 0;
+    }
+    
+    h3 {
+      font-size: 20px;
+      margin: 0 0 10px;
+    }
+    
+    #premios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+    
+    #premios li {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    #premios li img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+    
+    #premios li span {
+      font-weight: bold;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Premios Canjeables</h1>
+
+  <div class="puntos-container">
+    <img src="https://e7.pngegg.com/pngimages/14/139/png-clipart-computer-icons-desktop-test-score-cdr-angle.png" alt="Icono de puntos">
+    <h2>Puntos acumulados: <span id="puntos">0</span></h2>
+  </div>
+
+  <h3>¡Canjea tus puntos por premios!</h3>
+  
+  <ul id="premios">
+    <li data-nombre="Pelota" data-puntos="50">
+      <img src="https://www.nicepng.com/png/detail/67-679711_pelota-del-mundial-2018.png" alt="Pelota">
+      <span>Pelota - 50 puntos</span>
+    </li>
+    <li data-nombre="Rompecabezas" data-puntos="100">
+      <img src="https://assets.stickpng.com/images/588887cbbc2fc2ef3a1860a1.png" alt="Rompecabezas">
+      <span>Rompecabezas - 100 puntos</span>
+    </li>
+    <li data-nombre="Lápices de colores" data-puntos="75">
+      <img src="https://assets.stickpng.com/images/580b585b2edbce24c47b28df.png" alt="Lápices de colores">
+      <span>Lápices de colores - 75 puntos</span>
+    </li>
+    <li data-nombre="Libro de cuentos" data-puntos="150">
+      <img src="https://3.bp.blogspot.com/-BEpnPzNdgUo/U5IQn0iqLuI/AAAAAAAADJQ/FaQcQGeMobU/s1600/capture-20140606-210249.png" alt="Libro de cuentos">
+      <span>Libro de cuentos - 150 puntos</span>
+    </li>
+    <li data-nombre="Juego de mesa" data-puntos="200">
+      <img src="https://e7.pngegg.com/pngimages/882/448/png-clipart-tabletop-games-expansions-toy-plus-ultra-court-board-game-tablero-de-juego-game-board-game.png" alt="Juego de mesa">
+      <span>Juego de mesa - 200 puntos</span>
+    </li>
+    <li data-nombre="Peluche" data-puntos="90">
+      <img src="https://assets.stickpng.com/thumbs/580b585b2edbce24c47b2933.png" alt="Peluche">
+      <span>Peluche - 90 puntos</span>
+    </li>
+    <li data-nombre="Chocolate" data-puntos="80">
+      <img src="https://png.pngtree.com/png-clipart/20200226/original/pngtree-red-bow-chocolate-gift-box-three-dimensional-element-png-image_5318313.jpg" alt="Chocolate">
+      <span>Chocolate - 80 puntos</span>
+    </li>
+    <li data-nombre="Cubo mágico" data-puntos="120">
+      <img src="https://w7.pngwing.com/pngs/220/161/png-transparent-rubik-s-cube-cube.png" alt="Cubo mágico">
+      <span>Cubo mágico - 120 puntos</span>
+    </li>
+    <li data-nombre="Bolso deportivo" data-puntos="180">
+      <img src="https://d22fxaf9t8d39k.cloudfront.net/1a2af5c2438f376ddbee5db3462b84a60ccd61ea9c36e02e82275bc1ecddba0452085.png" alt="Bolso deportivo">
+      <span>Bolso deportivo - 180 puntos</span>
+    </li>
+    <li data-nombre="Muñeca" data-puntos="70">
+      <img src="https://w7.pngwing.com/pngs/912/1023/png-transparent-doll-graphy-toy-barbie-bear-doll.png" alt="Muñeca">
+      <span>Muñeca - 70 puntos</span>
+    </li>
+  </ul>
+
+  <script>
+    let puntos = 0;
+
+    const premios = document.querySelectorAll("#premios li");
+    premios.forEach(premio => {
+      premio.addEventListener("click", () => {
+        const nombre = premio.dataset.nombre;
+        const puntosNecesarios = premio.dataset.puntos;
+        if (puntos >= puntosNecesarios) {
+          alert(`¡Has canjeado tus puntos por un ${nombre}!`);
+          puntos -= puntosNecesarios;
+          document.getElementById("puntos").textContent = puntos;
+        } else {
+          alert("No tienes puntos suficientes para canjear este premio.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

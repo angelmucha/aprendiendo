@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO</title>
+    <body class="margen">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style login.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+            
+
+    <link rel="stylesheet" href="style registro.css">
+
+    <h1 class="leterlg">REGISTRATE</h1>
+</head>
+<body>
+    <div class="login">
+    <form class="formulario" id="register-form">
+        <input type="text" class="text" placeholder="Escribe tu Nombre y Apellidos" id="name" name="name" required>
+        <h2>NOMBRE Y APELLIDO</h2>
+        <br>
+        <br>
+        <input type="email" placeholder="Escribe tu e-mail" class="text" id="email" name="email" required>
+        <h2>CORREO</h2>
+        <br>
+        <input type="password" placeholder="Escribe tu contraseña" class="text" id="password" name="password" required>
+        <h2>CONTRASEÑA</h2>
+        <br><br><br><br><br><br>
+        <h2><a href="login.html">¿YA TIENES UNA CUENTA?</a></h2>
+        <div class="button-container">
+            <input type="submit" class="custom-btn1 btn-3" value="Regístrate">
+        </div>
+    </form>
+    </div>
+    <div class="login">
+        
+        <h4>Utiliza las siguientes guia para <br> rellenar el formulario. </h4  >
+        <br>
+        <h5>En nuestras redes sociales</h5>
+        <br><br>
+        <h5>- Sara Mendez</h5>
+        <br><br>
+        <h5>Via E-mail</h5>
+        <br><br>
+        <h5>- sara@gmail.com</h5>
+        <br><br>
+        <h5>contraseña</h5>
+        <br><br>
+        <h5>- xxxxxxxx</h5>
+    </div>  
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que el formulario se envíe de forma predeterminada
+
+            // Obtener los valores de los campos del formulario
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Crear un objeto con los datos a enviar
+            var data = {
+                name: name,
+                email: email,
+                password: password
+            };
+
+            // Realizar la solicitud POST utilizando Axios
+            axios.post('http://44.210.92.36:8001/register', data)
+                .then(function(response) {
+                    // La solicitud se completó con éxito
+                    console.log(response.data); // Puedes mostrar la respuesta en la consola o manejarla de otra manera
+                    alert('Registro exitoso'); // Mostrar alerta de éxito
+                    window.location.href = "login.html"
+                })
+                .catch(function(error) {
+                    // Ocurrió un error al realizar la solicitud
+                    console.log(error.response.data); // Puedes mostrar el mensaje de error en la consola o manejarlo de otra manera
+                    alert('Error: ' + error.response.data.msg); // Mostrar alerta de error con el mensaje del backend
+                });
+        });
+    </script>
+</body>
+<img class="imglg" src="img/Captura7.PNG">
+</html>

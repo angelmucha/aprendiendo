@@ -1,0 +1,273 @@
+/* HEADER*/
+li{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.a{
+    font-family: 'Amaranth', sans-serif;
+    font-size: 30px;
+    align-items: 100px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.b{
+  font-family: 'Amaranth', sans-serif;
+  font-size: 20px;
+  align-items: 100px;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+span{
+    font-family: 'Amaranth', sans-serif;
+    align-items: 10px;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content:space-between;
+    padding: 40px 8%;
+    background: rgba(0, 0, 0, 0.05);
+}
+.logo{
+    padding: 0rem 0rem 0 2rem;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.clase5g{
+    position: relative;
+    right: 50px;
+    left: -300px;
+    top: 0px;
+    width: 90px;
+}
+
+/*BOTONES,COM*/
+button {
+    margin: 20px;
+  }
+  .custom-btnG {
+    font-family: 'Merriweather', serif;
+    font-size: 25px;
+    width: 140px;
+    height: 40px;
+    color: #000000;
+    border-radius: 50px;
+    padding: 10px 25px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px #F1C40F,
+     7px 7px 20px 0px rgba(0,0,0,0.4),
+     4px 4px 5px 0px rgba(0,0,0,0.4);
+    outline: none;
+  }
+  
+
+  .btn-G{
+    left: 415px;
+    top: 70px;
+    background: #F1C40F;
+     background: linear-gradient(0deg, #F1C40F 0%, #FFCD00 100%);
+    width: 600px;
+    height: 60px;
+    border-radius: 20px;
+    line-height: 50px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-G span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-G:before,
+  .btn-G:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    border-radius: 50px;
+     background: #000000;
+    transition: all 0.3s ease;
+  }
+  .btn-G:before {
+    height: 0%;
+    width: 6px;
+    
+  }
+  .btn-G:after {
+    width: 0%;
+    height: 5px;
+  }
+  .btn-G:hover{
+     background: transparent;
+    box-shadow: none;
+  }
+  .btn-G:hover:before {
+    height: 100%;
+  }
+  .btn-G:hover:after {
+    width: 100%;
+  }
+  .btn-G span:hover{
+     color: #000000;
+  }
+  .btn-G span:before,
+  .btn-G span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: #000000;
+    transition: all 0.3s ease; 
+  }
+  .btn-G span:before {
+    width: 2px;
+    height: 0%;
+    border-radius: 50px;
+
+  }
+  .btn-G span:after {
+    width: 0%;
+    height: 2px;
+    border-radius: 50px;
+
+  }
+  .btn-G span:hover:before {
+    height: 100%;
+    border-radius: 50px;
+
+  }
+  .btn-G span:hover:after {
+    width: 100%;
+  }
+
+/*BOTONES,MATE*/
+button {
+  margin: 20px;
+}
+.custom-btnG2 {
+  font-family: 'Merriweather', serif;
+  font-size: 25px;
+  width: 140px;
+  height: 40px;
+  color: #000000;
+  border-radius: 50px;
+  padding: 10px 25px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px #F1C40F,
+   7px 7px 20px 0px rgba(0,0,0,0.4),
+   4px 4px 5px 0px rgba(0,0,0,0.4);
+  outline: none;
+}
+
+
+.btn-G2{
+  left: 250px;
+  top: 70px;
+  background: #F1C40F;
+   background: linear-gradient(0deg, #F1C40F 0%, #FFCD00 100%);
+  width: 900px;
+  height: 60px;
+  border-radius: 20px;
+  line-height: 50px;
+  padding: 0;
+  border: none;
+  
+}
+.btn-G2 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-G2:before,
+.btn-G2:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  border-radius: 50px;
+   background: #000000;
+  transition: all 0.3s ease;
+}
+.btn-G2:before {
+  height: 0%;
+  width: 6px;
+  
+}
+.btn-G2:after {
+  width: 0%;
+  height: 5px;
+}
+.btn-G2:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.btn-G2:hover:before {
+  height: 100%;
+}
+.btn-G2:hover:after {
+  width: 100%;
+}
+.btn-G2 span:hover{
+   color: #000000;
+}
+.btn-G2 span:before,
+.btn-G2 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: #000000;
+  transition: all 0.3s ease; 
+}
+.btn-G2 span:before {
+  width: 2px;
+  height: 0%;
+  border-radius: 50px;
+
+}
+.btn-G2 span:after {
+  width: 0%;
+  height: 2px;
+  border-radius: 50px;
+
+}
+.btn-G2 span:hover:before {
+  height: 100%;
+  border-radius: 50px;
+
+}
+.btn-G2 span:hover:after {
+  width: 100%;
+}
+
+/*imagen*/
+.claseg{
+  position: relative;
+  right: 0px;
+  left: 100px;
+  top: -420px;
+  width: 100px;
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <body class="margen">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style login.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style login.css">
+    <style>
+        #player {
+            width: 560px;
+            height: 315px;
+            margin: 0 auto;
+        }
+        #player iframe {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .quiz-container {
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .alternatives {
+            margin-bottom: 20px;
+        }
+
+        .alternatives label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result.correct {
+            color: #008000;
+        }
+
+        .result.incorrect {
+            color: #ff0000;
+        }
+
+        .correct-answer {
+            color: #008000;
+            font-weight: bold;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    <div class="quiz-container">
+        <div id="quiz-container"></div>
+        <div class="button-container">
+            <button id="check-answers">Verificar respuestas</button>
+        </div>
+        <div id="result-container"></div>
+    </div>
+    <script>
+        var userId = localStorage.getItem('userId');
+        if (!userId) {
+                // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+                window.location.href = 'login.html';
+            }
+        var userName = localStorage.getItem('userName');
+        // Obtener el ID del video de la URL actual
+        //var videoId = localStorage.getItem('id');
+        //console.log(videoId);
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("id");
+        //var id = 1;
+        if (id === null) {
+            console.log("El parámetro 'id' no está presente en la URL.");
+        } else {
+            console.log("Valor de 'id':", id);
+        }
+        // Realizar la solicitud GET al backend para obtener los detalles del video
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://44.210.92.36:8001/video/' + id, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var video = JSON.parse(xhr.responseText);
+                    // Obtener la URL del video de YouTube desde la respuesta del servidor
+                    var videoUrl = video.url;
+
+                    // Crear el elemento iframe del reproductor de video
+                    var playerElement = document.createElement('iframe');
+                    playerElement.src = videoUrl;
+                    playerElement.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    playerElement.allowFullscreen = true;
+
+                    // Agregar el reproductor de video al contenedor
+                    var playerContainer = document.getElementById('player');
+                    playerContainer.appendChild(playerElement);
+                } else {
+                    console.log(xhr.responseText);
+                    alert("Error: Video not found");
+                }
+            }
+        };
+        xhr.send();
+        // Hacer una solicitud GET al endpoint del servidor
+        var score = 0;
+        $.ajax({
+            url: 'http://44.210.92.36:8001/quiz/' + id,
+            type: 'GET',
+            success: function(response) {
+                var quizData = response;
+                var quizContainer = $('#quiz-container');
+
+                // Generar el HTML del cuestionario
+                for (var i = 0; i < quizData.length; i++) {
+                    var quiz = quizData[i];
+                    var questionHtml = '<div class="question">' + quiz.question + '</div>';
+
+                    // Generar las opciones de respuesta
+                    var alternativesHtml = '<div class="alternatives">';
+                    alternativesHtml += '<label><input type="radio" name="quiz' + i + '" value="1">' + quiz.alternativa1 + '</label>';
+                    alternativesHtml += '<label><input type="radio" name="quiz' + i + '" value="2">' + quiz.alternativa2 + '</label>';
+                    alternativesHtml += '<label><input type="radio" name="quiz' + i + '" value="3">' + quiz.alternativa3 + '</label>';
+                    alternativesHtml += '</div>';
+
+                    quizContainer.append(questionHtml + alternativesHtml);
+                }
+
+                // Función para verificar las respuestas
+                $('#check-answers').click(function() {
+                    
+
+                    // Obtener las respuestas seleccionadas por el usuario
+                    for (var i = 0; i < quizData.length; i++) {
+                        var selectedAnswer = $('input[name="quiz' + i + '"]:checked').val();
+                        var correctAnswer = quizData[i].answer.toString();
+
+                        if (selectedAnswer === correctAnswer) {
+                            score += 2;
+                            $('input[name="quiz' + i + '"]').parent().addClass('correct');
+                        } else {
+                            $('input[name="quiz' + i + '"]').parent().addClass('incorrect');
+                            $('input[name="quiz' + i + '"][value="' + correctAnswer + '"]').parent().addClass('correct-answer');
+                        }
+                        $('input[name="quiz' + i + '"]').attr('disabled', 'disabled');
+                    }
+
+                    // Mostrar el mensaje de felicitación o intentarlo de nuevo
+                    var resultContainer = $('#result-container');
+                    resultContainer.empty();
+
+                    if (score === 6) {
+                        resultContainer.html('<div class="result correct">¡Felicitaciones! '+userName+' Todas las respuestas son correctas Tu puntaje: ' + score + '</div>');
+                    } else {
+                        resultContainer.html('<div class="result incorrect">Lo siento '+userName+' , algunas respuestas son incorrectas. ¡Sigue intentándolo!\n Tu puntaje: ' + score + '</div>');
+                    }
+
+                    xhr.open("POST", "http://44.210.92.36:8001/score/" + id + "/" + userId, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 201) {
+                            var response = JSON.parse(xhr.responseText);
+                        } else if (xhr.readyState === 4 && xhr.status !== 201) {
+                            var errorResponse = JSON.parse(xhr.responseText);
+                            alert("Error: " + errorResponse.msg);
+                        }
+                    };
+
+                    var data = JSON.stringify({ "score": score });
+                    xhr.send(data);
+                });
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+        //Hacer una solicitur POST para guardar el puntaje del usuario
+       
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+    <style>
+        .scroll-container {
+            max-height: 700px; /* Altura máxima del contenedor */
+            overflow-y: scroll; /* Mostrar barra de desplazamiento vertical */
+        }
+    </style>
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <a href="../../../inicio.html">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </a>
+        </div>
+            <img class="clase5g" src="../../../img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>MATEMÁTICA 5TO DE PRIMARIA: </li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+<div class="scroll-container">
+    <button id="video30" class="custom-btnG2 btn-G2"><span><a class="a">MÚLTIPLOS</a></span></button>
+    <BR>
+    <button id="video31" class="custom-btnG2 btn-G2"><span><a class="a">NÚMEROS PRIMOS Y COMPUESTOS</a></span></button>
+    <BR>
+    <button id="video32" class="custom-btnG2 btn-G2"><span><a class="a">DIVISORES</a></span></button>
+    <br>
+    <button id="video33" class="custom-btnG2 btn-G2"><span><a class="a">MÍNIMO COMÚN MÚLTIPLO</a></span></button>
+    <BR>
+    <button id="video34" class="custom-btnG2 btn-G2"><span><a class="a">MÁXIMO COMÚN DIVISOR</a></span></button>
+    <BR>
+    <button id="video35" class="custom-btnG2 btn-G2"><span><a class="a">EXPRESIONES ALGEBRAICAS</a></span></button>
+
+</div>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+    
+    var video30 = document.getElementById("video30");
+    video30.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=30";
+    });
+
+    var video31 = document.getElementById("video31");
+    video31.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=31";
+    });
+
+    var video32 = document.getElementById("video32");
+    video32.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=32";
+    });
+
+    var video33 = document.getElementById("video33");
+    video33.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=33";
+    });
+
+    var video34 = document.getElementById("video34");
+    video34.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=34";
+    });
+
+    var video35 = document.getElementById("video35");
+    video35.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=35";
+    });
+
+</script>
+</html>

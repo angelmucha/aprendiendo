@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATERIA</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style m.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <a href="../inicio.html">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </a>
+        </div>
+            <img class="clase5g" src="../img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>SELECCIONA LA MATERIA DE TU PREFERENCIA: </li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+<button class="custom-btnG btn-G"><span><a href="Materias Grados/Tercer Grado/Com3r.html" class="a">COMUNICACIÓN</a></span></button>
+<BR>
+<button class="custom-btnG btn-G"><span><a href="Materias Grados/Tercer Grado/Mate3r.html" class="a">MATEMÁTICA</a></span></button>
+<BR>
+
+<img class="claseg" src="../img/Captura1.png">
+<img class="claseg2" src="../img/Captura0.png">
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+</script>
+</html>

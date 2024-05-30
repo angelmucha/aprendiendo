@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    
+    <style>
+        .scroll-container {
+            max-height: 700px; /* Altura máxima del contenedor */
+            overflow-y: scroll; /* Mostrar barra de desplazamiento vertical */
+        }
+    </style>
+</head>
+<body class="margen">
+    <header class="header">
+        <div class="logo">
+            <a href="../../../inicio.html">
+                <p>¡HOLA</p>
+                <p id="greeting"></p>
+            </a>
+        </div>
+        <img class="clase5g" src="../../../img/Captura3.PNG">
+    
+        <nav>
+            <ul>
+                <li>MATEMÁTICA 3RO DE PRIMARIA:</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scroll-container"> <!-- Contenedor con barra de desplazamiento -->
+        <button id="video6" class="custom-btnG2 btn-G2"><span><a class="b">OPERACIONES BÁSICAS (MULTIPLICACIÓN Y DIVISIÓN)</a></span></button>
+        <br>
+        <button id="video7" class="custom-btnG2 btn-G2"><span><a class="b">SERIES NUMÉRICAS.</a></span></button>
+        <br>
+        <button id="video8" class="custom-btnG2 btn-G2"><span><a class="b">ÁREAS Y PERÍMETROS DE SUPERFICIES.</a></span></button>
+        <br>
+        <button id="video9" class="custom-btnG2 btn-G2"><span><a class="b">FRACCIONES: REPRESENTACIÓN, FRACCIONES MENORES A LA UNIDAD.</a></span></button>
+        <br>
+        <button id="video10" class="custom-btnG2 btn-G2"><span><a class="b">VOLUMEN DE LOS CUERPOS.</a></span></button>
+        <br>
+        <button id="video11" class="custom-btnG2 btn-G2"><span><a class="b">FORMAS TRIDIMENSIONALES (CUERPOS REDONDOS Y COMPUESTOS) ELEMENTOS Y CAPACIDAD</a></span></button>
+    </div>
+</body>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+    
+    var video6 = document.getElementById("video6");
+    video6.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=6";
+    });
+
+    var video7 = document.getElementById("video7");
+    video7.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=7";
+    });
+
+    var video8 = document.getElementById("video8");
+    video8.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=8";
+    });
+
+    var video9 = document.getElementById("video9");
+    video9.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=9";
+    });
+
+    var video10 = document.getElementById("video10");
+    video10.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=10";
+    });
+
+    var video11 = document.getElementById("video11");
+    video11.addEventListener("click", function() {
+        window.location.href = "../../../video.html?id=11";
+    });
+</script>
+</html>

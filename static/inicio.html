@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+</head>
+
+<body class="margen">
+    <header>
+        <div class="logo">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="principal.html">INICIO</a></li>
+                <li><a id="gradoEbutton">GRADO DE ESTUDIO</a></li>
+                <li><a href="contactos.html">SOBRE NOSOTROS</a></li>
+                <li><a href="premios.html">PREMIOS</a></li>
+            </ul>
+        </nav>
+        <button id="logoutButton" class="custom-btn2 btn1" ><a>CERRAR SESIÓN</a></button>
+    </header>
+
+    <h1 class="leter1">APRENDE SIN LÌMITES</h1>
+    <h3 class="leter2">Hola, bienvenido. Esta es una página que te ayudará a desarrollar tu aprendizaje.</h3>
+    <button class="custom-btn1 btn-3"><a href="principal.html"><span>DESCÚBRELO</span></a></button>
+
+    <div class="cont">   
+        <img class="clase1" src="img/Captura5.png">
+        <img class="clase2" src="img/Captura0.png">
+        <img class="clase3" src="img/Captura1.png">
+        <img class="clase4" src="img/Captura4.png">
+    </div>
+
+    <script>
+        // Verificar si el usuario ha iniciado sesión antes de acceder a la página
+        var userId = localStorage.getItem('userId');
+        if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+        var userName = localStorage.getItem('userName');
+        // Mostrar un saludo al usuario
+        var greetingElement = document.getElementById('greeting');
+        greetingElement.innerHTML = userName + '!';
+        // Utilizar el ID del usuario como desees
+        console.log('User ID:', userId);
+        // Agregar un evento de clic al botón de cierre de sesión
+        var logoutButton = document.getElementById('logoutButton');
+        logoutButton.addEventListener('click', function() {
+            // Eliminar el identificador de sesión del almacenamiento local
+            localStorage.removeItem('userId');
+            // Redireccionar al usuario a la página de inicio de sesión
+            window.location.href = 'principal.html';
+        });
+
+        var gradoEbutton = document.getElementById('gradoEbutton');
+        gradoEbutton.addEventListener('click', function() {
+            window.location.href = 'Grado de Educacion.html?id=' + userId + '&userName=' + userName;
+        });
+    </script>
+</body>
+</html>

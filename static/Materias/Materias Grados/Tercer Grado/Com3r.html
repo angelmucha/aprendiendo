@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <a href="../../../inicio.html">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </a>
+        </div>
+            <img class="clase5g" src="../../../img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>COMUNICACIÓN 3RO DE PRIMARIA: </li>
+        </ul>
+    </nav>
+    </header>
+    
+    <button id="video1" class="custom-btnG btn-G "><span><a class="a"> TEXTOS NARRATIVO</a></span></button>
+    <BR>
+    <button id="video2" class="custom-btnG btn-G"><span><a class="a">ELEMENTOS DE LA COMUNICACIÓN</a></span></button>
+    <BR>
+    <button id="video3"" class="custom-btnG btn-G"><span><a class="a">EL PUNTO Y LA MAYÚSCULA</a></span></button>
+    <br>
+    <button id="video4" class="custom-btnG btn-G"><span><a class="a">EL ARTÍCULO</a></span></button>
+    <BR>
+    <button id="video5" class="custom-btnG btn-G"><span><a class="a">SUJETO Y PREDICADO: NÚCLEOS</a></span></button>
+    <br>
+</div>
+</body>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+
+    var video1 = document.getElementById("video1");
+    video1.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=1";
+    });
+
+    var video2 = document.getElementById("video2");
+    video2.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=2";
+    });
+
+    var video3 = document.getElementById("video3");
+    video3.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=3";
+    });
+
+    var video4 = document.getElementById("video4");
+    video4.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=4";
+    });
+
+    var video5 = document.getElementById("video5");
+    video5.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=5";
+    });
+
+</script>
+</div>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+    <style>
+        .scroll-container {
+            max-height: 700px; /* Altura máxima del contenedor */
+            overflow-y: scroll; /* Mostrar barra de desplazamiento vertical */
+        }
+    </style>
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <a href="../../../inicio.html">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </a>
+        </div>
+            <img class="clase5g" src="../../../img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>COMUNICACIÓN 5TO DE PRIMARIA: </li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+<div class="scroll-container">
+    <button id="video24" class="custom-btnG btn-G"><span><a class="a">LA COMUNICACIÓN ORAL Y ESCRITA.</a></span></button>
+    <BR>
+    <button id="video25" class="custom-btnG btn-G"><span><a class="b">LA IMPORTANCIA DE LA COMUNICACIÓN EN LAS RELACIONES INTERPERSONALES.</a></span></button>
+    <BR>
+    <button id="video26" class="custom-btnG btn-G"><span><a class="a">LA COMUNICACIÓN Y LOS MEDIOS DE COMUNICACIÓN</a></span></button>
+    <br>
+    <button id="video27" class="custom-btnG btn-G"><span><a class="a">TEMA Y SUBTEMA</a></span></button>
+    <BR>
+    <button id="video28" class="custom-btnG btn-G"><span><a class="a">IDEA PRINCIPAL E IDEAS SECUNDARIAS</a></span></button>
+    <BR>
+    <button id="video29" class="custom-btnG btn-G"><span><a class="a">LAS REGLAS GENERALES DE ACENTUACIÓN GENERAL
+    </a></span></button>
+
+</div>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+    
+    var video24 = document.getElementById("video24");
+    video24.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=24";
+    });
+
+    var video25 = document.getElementById("video25");
+    video25.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=25";
+    });
+
+    var video26 = document.getElementById("video26");
+    video26.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=26";
+    });
+
+    var video27 = document.getElementById("video27");
+    video27.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=27";
+    });
+
+    var video28 = document.getElementById("video28");
+    video28.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=28";
+    });
+
+    var video29 = document.getElementById("video29");
+    video29.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=29";
+    });
+
+</script>
+</html>

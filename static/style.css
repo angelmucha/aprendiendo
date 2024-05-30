@@ -1,0 +1,291 @@
+          /* F O N D O */
+        body{
+            background-image: url(img/fondo.jpg); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .margen{
+            overflow: hidden;
+        }
+        
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+        header{
+            width: 100%;
+            height: 75px;
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 30px 10%;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .logo{
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+        nav li{
+            display: inline-block;
+            list-style: none;
+            padding: 0px 20px;
+        }
+
+        a{
+            font-family: 'Abril Fatface', cursive;
+            font-size: 20px;
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        button{
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid #000000;
+            border-radius: 100 px;
+            padding: 9px 25px;
+        }
+        nav li a:hover{
+            font-size: 18px;
+            color: #5DADE2;
+            transition: all 0.5s ease 0s ;
+
+        }
+        /* DISEÑO BOTON REGISTRATE*/
+        .custom-btn2 {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            color: #000000;
+            border-radius: 50px;
+            padding: 10px 25px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+      
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px rgba(0,0,0,0),
+             7px 7px 20px 0px rgba(0,0,0,0.4),
+             4px 4px 5px 0px rgba(0,0,0,0.4);
+            outline: none;
+          }
+        .btn1{
+            left: 400px;
+            top: 70px;
+            background: rgba(0,0,0,0);
+             background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 100%);
+            width: 250px;
+            height: 50px;
+            border-radius: 20px;
+            line-height: 50px;
+            padding: 0;
+            border: none;
+            
+          }
+          .btn1 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          .btn1:before,
+          .btn1:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            border-radius: 50px;
+             background: #000000;
+            transition: all 0.3s ease;
+          }
+          .btn1:before {
+            height: 0%;
+            width: 2px;
+            
+          }
+          .btn1:after {
+            width: 0%;
+            height: 5px;
+          }
+          .btn1:hover{
+             background: transparent;
+            box-shadow: none;
+          }
+          .btn1:hover:before {
+            height: 100%;
+          }
+          .btn1:hover:after {
+            width: 100%;
+          }
+         
+        /*BOTON 2*/
+
+        button {
+            margin: 20px;
+          }
+          .custom-btn1 {
+            font-family: 'Merriweather', serif;
+            font-size: 15px;
+            width: 130px;
+            height: 40px;
+            color: #000000;
+            border-radius: 50px;
+            padding: 10px 25px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px #F1C40F,
+             7px 7px 20px 0px rgba(0,0,0,0.4),
+             4px 4px 5px 0px rgba(0,0,0,0.4);
+            outline: none;
+          }
+          
+
+        .btn-3 {
+            left: 400px;
+            top: 70px;
+            background: #F1C40F;
+             background: linear-gradient(0deg, #F1C40F 0%, #FFCD00 100%);
+            width: 250px;
+            height: 50px;
+            border-radius: 20px;
+            line-height: 50px;
+            padding: 0;
+            border: none;
+            
+          }
+          .btn-3 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          .btn-3:before,
+          .btn-3:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            border-radius: 50px;
+             background: #000000;
+            transition: all 0.3s ease;
+          }
+          .btn-3:before {
+            height: 0%;
+            width: 2px;
+            
+          }
+          .btn-3:after {
+            width: 0%;
+            height: 2px;
+          }
+          .btn-3:hover{
+             background: transparent;
+            box-shadow: none;
+          }
+          .btn-3:hover:before {
+            height: 100%;
+          }
+          .btn-3:hover:after {
+            width: 100%;
+          }
+          .btn-3 span:hover{
+             color: #000000;
+          }
+          .btn-3 span:before,
+          .btn-3 span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+             background: #000000;
+            transition: all 0.3s ease; 
+          }
+          .btn-3 span:before {
+            width: 2px;
+            height: 0%;
+            border-radius: 50px;
+
+          }
+          .btn-3 span:after {
+            width: 0%;
+            height: 2px;
+            border-radius: 50px;
+
+          }
+          .btn-3 span:hover:before {
+            height: 100%;
+            border-radius: 50px;
+
+          }
+          .btn-3 span:hover:after {
+            width: 100%;
+          }
+          
+
+/* TITULO */
+  .leter1{
+    font-family: 'Abril Fatface', cursive;
+    max-width: 50rem;
+    font-size: 4.5rem;
+    letter-spacing: 0rem;
+    padding: 8rem 0rem 0 3.5rem;
+    
+  }
+
+.leter2{
+    font-family: 'Merriweather', serif;
+    max-width: 50rem;
+    font-size: 1.5rem;
+    padding: 3rem 0rem 0 3.5rem;
+
+}
+
+/*clase para las iamgenes*/
+.cont{
+    width: 75vw;
+    max-width: 1000px;
+    min-width: 200px;
+}
+.clase1{
+    position: relative;
+    right: 0px;
+    left: 800px;
+    top: -160px;
+    width: 500px;
+}
+.clase2{
+    position: relative;
+    right: 0px;
+    left: 630px;
+    top: -200px;
+    width: 300px;
+}
+.clase3{
+    position: relative;
+    right: 0px;
+    left: 850px;
+    top: -760px;
+    width: 250px;
+}
+.clase4{
+    position: relative;
+    right: 0px;
+    left: -230px;
+    top: -560px;
+    width: 100px;
+}
+.clase5{
+    position: relative;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    width: 80px;
+}

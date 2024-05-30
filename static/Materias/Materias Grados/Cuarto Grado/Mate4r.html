@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADO DE APRENDIZAJE</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="style g.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amaranth&family=Anton&family=Bebas+Neue&family=Merriweather:wght@300&family=Ultra&display=swap" rel="stylesheet">
+
+    <style>
+        .scroll-container {
+            max-height: 700px; /* Altura máxima del contenedor */
+            overflow-y: scroll; /* Mostrar barra de desplazamiento vertical */
+        }
+    </style>
+
+     <body class="margen">
+      <header class="header">
+        <div class="logo">
+            <a href="../../../inicio.html">
+            <p>¡HOLA</p>
+            <p id="greeting"></p>
+        </a>
+        </div>
+            <img class="clase5g" src="../../../img/Captura3.PNG">
+    
+    <nav>
+        <ul>
+            <li>MATEMÁTICA 4TO DE PRIMARIA: </li>
+        </ul>
+    </nav>
+    </header>
+
+</body>
+<div class="scroll-container">
+    <button id="video18" class="custom-btnG2 btn-G2"><span><a class="a">NÚMEROS ROMANOS</a></span></button>
+    <BR>
+    <button id="video19" class="custom-btnG2 btn-G2"><span><a class="a">OPERACIONES COMBINADAS</a></span></button>
+    <BR>
+    <button id="video20" class="custom-btnG2 btn-G2"><span><a class="a">RECTAS PARALELAS Y SECANTES</a></span></button>
+    <br>
+    <button id="video21" class="custom-btnG2 btn-G2"><span><a class="a"> MULTIPLICACIÓN CON UNA CIFRA - MULTIPLICACIÓN CON DOS CIFRAS</a></span></button>
+    <BR>
+    <button id="video22" class="custom-btnG2 btn-G2"><span><a class="a">POTENCIA</a></span></button>
+    <BR>
+    <button id="video23" class="custom-btnG2 btn-G2"><span><a class="b">DIVISIÓN ENTRE UN NÚMERO DE UNA CIFRA - DIVISIÓN ENTRE UN NÚMERO DE DOS CIFRAS</a></span></button>
+</div>
+<script>
+    var userId = localStorage.getItem('userId');
+    if (!userId) {
+            // Redireccionar al usuario a la página de inicio de sesión si no ha iniciado sesión
+            window.location.href = 'login.html';
+        }
+    var userName = localStorage.getItem('userName');
+    // Mostrar un saludo al usuario
+    var greetingElement = document.getElementById('greeting');
+    greetingElement.innerHTML = userName + '!';
+
+    var video18 = document.getElementById("video18");
+    video18.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=18";
+    });
+
+    var video19 = document.getElementById("video19");
+    video19.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=19";
+    });
+
+    var video20 = document.getElementById("video20");
+    video20.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=20";
+    });
+
+    var video21 = document.getElementById("video21");
+    video21.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=21";
+    });
+
+    var video22 = document.getElementById("video22");
+    video22.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=22";
+    });
+
+    var video23 = document.getElementById("video23");
+    video23.addEventListener("click", function(){
+        window.location.href = "../../../video.html?id=23";
+    });
+</script>
+</html>
